@@ -1,9 +1,15 @@
 const gridContainer = document.querySelector(".grid-container");
 
-for(let i = 0; i < 256; i++){
-    const nextSquare = document.createElement("div");
-    nextSquare.classList.add("square");
-    gridContainer.appendChild(nextSquare);
+function GenerateSquareGrid(){
+    for(let i = 0; i < sideCount; i++){
+
+        for(let y = 0; y < sideCount; y++){
+            const nextSquare = document.createElement("div");
+            nextSquare.classList.add("square");
+            gridContainer.appendChild(nextSquare);
+        }
+    }
+
 }
 
 function DrawSquareOnMouseEnter(){ 
