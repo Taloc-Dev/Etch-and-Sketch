@@ -4,14 +4,12 @@
     display: flex;
     flex-wrap: wrap;
     width: 900px;
-    text-align: center;
     margin: 0 auto;
 }
 .grid-container div{
     box-sizing: border-box;
      border: 1px solid black;
      flex: 1;
-     min-width: 6.25%;
      aspect-ratio: 1/ 1;
      margin: 0px;
 }
