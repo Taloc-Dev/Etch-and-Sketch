@@ -4,7 +4,8 @@ function GenerateSquareGrid(){
     if(sideCount === 0) return;
 
     const gridContainer = document.querySelector(".grid-container"); 
-
+    CleanOldGrid(gridContainer);
+    
     if(sideCount > 100) sideCount = 100;
     let squareWidth = 100 / sideCount;
 
@@ -18,6 +19,10 @@ function GenerateSquareGrid(){
         }
     }
     DrawSquareOnMouseEnter(gridContainer);
+}
+
+function CleanOldGrid(gridContainer){
+    gridContainer.textContent = '';
 }
 
 function DrawSquareOnMouseEnter(gridContainer){ 
