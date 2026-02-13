@@ -1,6 +1,9 @@
 const gridContainer = document.querySelector(".grid-container");
 
-function GenerateSquareGrid(){
+function GenerateSquareGrid(sideCount){
+
+    if(sideCount > 100) sideCount = 100;
+
     for(let i = 0; i < sideCount; i++){
 
         for(let y = 0; y < sideCount; y++){
@@ -9,7 +12,6 @@ function GenerateSquareGrid(){
             gridContainer.appendChild(nextSquare);
         }
     }
-
 }
 
 function DrawSquareOnMouseEnter(){ 
