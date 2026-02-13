@@ -1,5 +1,8 @@
 
-function GenerateSquareGrid(sideCount){
+function GenerateSquareGrid(){
+    sideCount = AskUserGridSize();
+    if(sideCount === 0) return;
+
     const gridContainer = document.querySelector(".grid-container"); 
 
     if(sideCount > 100) sideCount = 100;
@@ -26,4 +29,23 @@ function DrawSquareOnMouseEnter(gridContainer){
         }
     });
 }
-GenerateSquareGrid(16);
+
+function SetUpGridGeneratorBtn(){
+    const button = document.querySelector("button");
+    button.addEventListener("click", GenerateSquareGrid);
+}
+
+function AskUserGridSize(){
+    let userInput = prompt("Enter a side amount for a new grid:", 0);
+    let gridSideSize = parseInt(userInput);
+    console.log(typeof gridSideSize);
+
+    if(typeof gridSideSize === "number"){
+        return gridSideSize;
+    }
+    else{
+        return 0;
+    }
+}
+
+SetUpGridGeneratorBtn();
